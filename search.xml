@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>SSH-后台持续运行指令</title>
+      <link href="2021/02/10/SSH-%E5%90%8E%E5%8F%B0%E6%8C%81%E7%BB%AD%E8%BF%90%E8%A1%8C%E6%8C%87%E4%BB%A4/"/>
+      <url>2021/02/10/SSH-%E5%90%8E%E5%8F%B0%E6%8C%81%E7%BB%AD%E8%BF%90%E8%A1%8C%E6%8C%87%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一-方法"><a href="#一-方法" class="headerlink" title="一.方法"></a>一.方法</h2><p><strong>1、安装screen命令</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install screen</span><br></pre></td></tr></table></figure><p><strong>2、创建screen会话，自定义screen虚拟终端的名称，hass 可以改为你想要的名称</strong></p><p>**screen -S Text **</p><p><strong>3运行你需要一直在后台运行的程序</strong></p><p>  在输入上述指令后弹出的窗口直接运行指令，然后关闭即可</p><p><strong>4 退出远程登陆，Text程序仍在运行</strong></p><p><strong>5 重新远程登陆，查看当前开着的screen会话</strong></p><p><strong><em>screen -ls</em></strong></p><p><img src="C:\Users\LCDEM\AppData\Roaming\Typora\typora-user-images\image-20210210120310917.png" alt="image-20210210120310917"></p><p>发现两个会话</p><p>查看子界面的代号，然后输入下述指令即可查看刚才关闭时运行的程序</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r 19491</span><br></pre></td></tr></table></figure><p><strong>6.如何让关闭和更多用法</strong></p><p>输入<code>screen -r 19491</code>后出现的窗口中输入下述指令即可关闭程序</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure><h2 id="二-screen用法："><a href="#二-screen用法：" class="headerlink" title="二.screen用法："></a>二.screen用法：</h2><ul><li>打开新的会话窗口：screen</li><li>结束当前会话：exit</li><li>在新会话中执行程序（程序关闭时会话自动结束）：screen vi test.c</li><li>打开新会话并起个名字：screen -S myname</li><li>暂时离开会话（经常用）：Ctrl+a 然后 d</li><li>查看会话列表: screen -ls</li><li>恢复之前离开的会话：screen -r 会话名或进程号</li><li>清除dead状态的会话：screen -wipe</li><li>启动一个开始就是Detached状态的会话：screen -dmS 名字 命令</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>树莓派开箱常用指令</title>
       <link href="2021/02/08/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BC%80%E7%AE%B1%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
       <url>2021/02/08/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BC%80%E7%AE%B1%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
