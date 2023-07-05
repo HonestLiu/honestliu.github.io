@@ -1,0 +1,244 @@
+<!DOCTYPE html><html class="appearance-auto" lang="zh-CN"><head><meta charset="UTF-8"><title>JAVA-控制流学习笔记</title><meta name="description" content="May the Force be with you"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="一. if-else格式if(布尔值表达式) //如果为true则执行
+    程序主干
+else if(布尔值表达式) //如果为true则执行
+    程序主干
+else //上述全为false时执行
+    
+
+例程public class IfElse &amp;#123;
+    static int result = 0;
+    static void test(int a,int b) &amp;#123;
+        if (a &amp;gt; b) &amp;#123;
+            result = +1;
+        &amp;#125;
+        else if (a &amp;lt; b) &amp;#123;
+            result = -1;
+        &amp;#125;
+        e.."><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="诚君的个人站" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">HonestLiu's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">JAVA-控制流学习笔记</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">点击返回顶部</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-if-else"><span class="toc-text">一. if-else</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F"><span class="toc-text">格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E7%A8%8B"><span class="toc-text">例程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-While"><span class="toc-text">二.While</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F-1"><span class="toc-text">格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E7%A8%8B-1"><span class="toc-text">例程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-do-while"><span class="toc-text">三.do-while</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F-2"><span class="toc-text">格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-for"><span class="toc-text">四.for</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F-3"><span class="toc-text">格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E7%A8%8B-2"><span class="toc-text">例程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-for-each"><span class="toc-text">五.for each</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F-4"><span class="toc-text">格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E7%A8%8B-3"><span class="toc-text">例程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD-return"><span class="toc-text">六.return</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E7%A8%8B-4"><span class="toc-text">例程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-break%E5%92%8Ccontinue"><span class="toc-text">七.break和continue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Break%E4%BE%8B%E7%A8%8B-%E8%BE%BE%E6%88%90%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9D%9F%E5%BE%AA%E7%8E%AF%E6%97%B6%E7%94%A8"><span class="toc-text">Break例程(达成条件结束循环时用)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Continue%E4%BE%8B%E7%A8%8B-%E8%B7%B3%E4%B8%80%E6%AC%A1%E7%9A%84%E6%97%B6%E7%94%A8"><span class="toc-text">Continue例程(跳一次的时用)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-Switch%E5%BE%AA%E7%8E%AF-%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="toc-text">五.Switch循环(分支结构)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%A5%E5%BC%8F"><span class="toc-text">句式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E7%A8%8B%EF%BC%9A"><span class="toc-text">例程：</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/Java"><i class="tag post-item-tag">Java</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">JAVA-控制流学习笔记</h1><time class="has-text-grey" datetime="2023-07-04T09:35:23.000Z">2023-07-04</time><article class="mt-2 post-content"><h2 id="一-if-else"><a href="#一-if-else" class="headerlink" title="一. if-else"></a>一. if-else</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><pre><code class="java">if(布尔值表达式) //如果为true则执行
+    程序主干
+else if(布尔值表达式) //如果为true则执行
+    程序主干
+else //上述全为false时执行
+    
+</code></pre>
+<h3 id="例程"><a href="#例程" class="headerlink" title="例程"></a>例程</h3><pre><code class="java">public class IfElse &#123;
+    static int result = 0;
+    static void test(int a,int b) &#123;
+        if (a &gt; b) &#123;
+            result = +1;
+        &#125;
+        else if (a &lt; b) &#123;
+            result = -1;
+        &#125;
+        else &#123;
+            result = 0;
+        &#125;
+    &#125;
+    public  static void main(String[] args)&#123;
+        test(10,5);
+        System.out.println(result); //+1
+        test(5,10);
+        System.out.println(result); //-1
+        test(2,2);
+        System.out.println(result);  //0
+    &#125;
+&#125;
+</code></pre>
+<h2 id="二-While"><a href="#二-While" class="headerlink" title="二.While"></a>二.While</h2><blockquote>
+<p><strong>迭代语句</strong></p>
+<p>此语句会重复执行，知道其控制作用的布尔值为<strong>false</strong>时方会停止执行</p>
+</blockquote>
+<h3 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h3><pre><code class="java">while(boolean值)&#123;
+    程序主干
+&#125;
+</code></pre>
+<h3 id="例程-1"><a href="#例程-1" class="headerlink" title="例程"></a>例程</h3><pre><code class="java">    int i = 1; //循环变量初始化
+    while( i &lt;= 10 ) &#123;//循环条件,当i大于10时，此时布尔值转为false,循环停止。
+        System.out.println(i);//执行语句
+        i++;
+    &#125;
+/*
+因为布尔值固定为true,故此时为死循环。
+    while(true) &#123;
+        
+    &#125;
+ */
+</code></pre>
+<h2 id="三-do-while"><a href="#三-do-while" class="headerlink" title="三.do-while"></a>三.do-while</h2><blockquote>
+<p>do-while与while的区别就是do-while中的语句至少执行一次，即便起控制作用的布尔值第一次就是flase.</p>
+</blockquote>
+<h3 id="格式-2"><a href="#格式-2" class="headerlink" title="格式"></a>格式</h3><pre><code class="java">do 
+    程序主体 
+while(布尔值表达式)
+    程序主干
+</code></pre>
+<h2 id="四-for"><a href="#四-for" class="headerlink" title="四.for"></a>四.for</h2><blockquote>
+<p>这种循环第一次会进行初始化，然后进行条件测试，每次迭代结束后，还会有某种形式的“步进”</p>
+<p>初始化和步进部分都是按顺序执行的，初始化会最先执行</p>
+</blockquote>
+<h3 id="格式-3"><a href="#格式-3" class="headerlink" title="格式"></a>格式</h3><pre><code class="java">for(初始化表达式; 布尔值表达式; 步进(可空))
+    程序主体
+</code></pre>
+<h3 id="例程-2"><a href="#例程-2" class="headerlink" title="例程"></a>例程</h3><pre><code class="java">public class ForTest &#123;
+  public static void main(String args[]) &#123;
+    int i;
+
+    for (i = 0; i &lt; 3; i = i + 1)
+      System.out.println(i);
+  &#125;
+&#125;
+/*输出
+0
+1
+2
+*/
+</code></pre>
+<h2 id="五-for-each"><a href="#五-for-each" class="headerlink" title="五.for each"></a>五.for each</h2><blockquote>
+<p>增强的for循环</p>
+<p>作用：从一个集合(数组)中遍历数据</p>
+</blockquote>
+<h3 id="格式-4"><a href="#格式-4" class="headerlink" title="格式"></a>格式</h3><p>1.先定义数值，假设数组名为array;</p>
+<p>2.for(数据类型 变量:array) { &#x2F;&#x2F;数据类型与数组类型一致</p>
+<p>}</p>
+<h3 id="例程-3"><a href="#例程-3" class="headerlink" title="例程"></a>例程</h3><pre><code class="java">String[] names = &#123;&quot;刘备&quot;,&quot;关羽&quot;,&quot;张飞&quot;,&quot;诸葛亮&quot;&#125;；
+    for(String s:names)&#123;
+        System.out.println(s);
+    &#125;
+/*
+刘备
+关羽
+张飞
+诸葛亮
+</code></pre>
+<h2 id="六-return"><a href="#六-return" class="headerlink" title="六.return"></a>六.return</h2><blockquote>
+<p>用途：</p>
+<p>1.指定一个方法的返回值（不存在就返回<strong>void</strong>）</p>
+<p>2.使当前方法退出，并返回这个值</p>
+<p>注意：</p>
+<p>1.如果一个返回void值的方法后面没有return,则它后面会有一个隐含的return</p>
+<p>2.返回非void值的方法，则必须确定每一条代码路径都会返回一个值</p>
+</blockquote>
+<h3 id="例程-4"><a href="#例程-4" class="headerlink" title="例程"></a>例程</h3><pre><code class="java">public class ReturnTest &#123;
+    static int test(int a, int b) &#123;
+        if (a &gt; b) &#123;
+            return +1; //满足条件，返回 +1
+        &#125;
+        else if (a &lt; b) &#123;
+            return -1; //满足条件，返回 -1
+        &#125;
+        else &#123;
+            return 0; //满足条件，返回 0
+        &#125;
+
+    &#125;
+    public  static void main(String[] args) &#123;
+
+        System.out.println(test(10,5));//+1
+        System.out.println(test(5,10)); //-1
+        System.out.println(test(2,2));  //0
+    &#125;
+&#125;
+</code></pre>
+<h2 id="七-break和continue"><a href="#七-break和continue" class="headerlink" title="七.break和continue"></a>七.break和continue</h2><blockquote>
+<p>1.<strong>break</strong>用于<strong>跳出一个循环体或者完全结束一个循环</strong> (结束了其所在的<strong>整个</strong>循环)</p>
+<p>2.<strong>continue</strong>语句的作用是<strong>跳过本次循环体中剩下尚未执行的语句，立即进行下一次的循环条件判定 ** (只是跳过了符合其条件的</strong>一次**循环)</p>
+</blockquote>
+<h3 id="Break例程-达成条件结束循环时用"><a href="#Break例程-达成条件结束循环时用" class="headerlink" title="Break例程(达成条件结束循环时用)"></a>Break例程(达成条件结束循环时用)</h3><blockquote>
+<p>条件达成时，该循环彻底停止，不会继续执行</p>
+</blockquote>
+<pre><code class="java">public class Test3 &#123;
+    public static void main(String[] args) &#123;
+        for(int i=0; i&lt;12; i++)&#123;
+            if(i==5)&#123;
+                break;//到 i==5 ,这一个for循环直接全部结束
+            &#125;
+            System.out.print(i+&quot; &quot;);
+        &#125;
+    &#125;
+&#125;
+/*输出
+0 1 2 3 4
+*/
+</code></pre>
+<h3 id="Continue例程-跳一次的时用"><a href="#Continue例程-跳一次的时用" class="headerlink" title="Continue例程(跳一次的时用)"></a>Continue例程(跳一次的时用)</h3><blockquote>
+<p>条件达成时，停止该循环中符合条件的<strong>那一次</strong>循环，后继循环将继续运行</p>
+</blockquote>
+<pre><code class="java">public class Test4 &#123;
+    public static void main(String[] args) &#123;
+        for(int i=0; i&lt;12; i++)&#123;
+            if(i==5)&#123;
+                continue; //有且仅有跳过了5这一次的循环，整体循环还将继续
+            &#125;
+            System.out.print(i+&quot; &quot;);
+        &#125;
+    &#125;
+&#125;
+/*输出
+0 1 2 3 4 6 7 8 9 10 11
+*/
+</code></pre>
+<h2 id="五-Switch循环-分支结构"><a href="#五-Switch循环-分支结构" class="headerlink" title="五.Switch循环(分支结构)"></a>五.Switch循环(分支结构)</h2><blockquote>
+<p>Switch在后继JAVA版本中提供了更加简化的语法，这个笔记先不展开，黑马的笔记里有提及。</p>
+</blockquote>
+<h3 id="句式"><a href="#句式" class="headerlink" title="句式"></a>句式</h3><blockquote>
+<p><strong>格式说明：</strong></p>
+<p>1.<strong>整数值选择器</strong>：(将生成用于匹配的值，与下面case的值进行匹配)取值为byte，short，int，char等整数值，JAVA7后对于非整数值加入了<strong>字符串</strong>-&gt;String.</p>
+<p>2.**case   **:后面跟的是要和表达式进行比较的值（被匹配值）。</p>
+<p>3.<strong>break</strong>  :表示中断，结束的意思，用来结束switch语句,没有的话它会继续执行知道遇到下一个break,俗称<strong>case穿透</strong></p>
+<p>4.<strong>default</strong>  :表示所有情况都不匹配的时候，就执行此处的内容，和if语句的else相似。(其执行完毕的地方是所有break跳转的目的地)</p>
+<p>5.<strong>case</strong>后面的值只能是字面量，不能是变量</p>
+<p>6.<strong>case</strong>给出的值<strong>不</strong>允许<strong>重复</strong></p>
+</blockquote>
+<pre><code class="java">switch(表达式)&#123;
+    case 值1:
+        语句体1;
+        break;
+    case 值2:
+        语句体2;
+        break;
+    ....
+     default:
+        语句体n+1;
+        break;
+&#125;
+</code></pre>
+<h3 id="例程："><a href="#例程：" class="headerlink" title="例程："></a><strong>例程：</strong></h3><blockquote>
+<pre><code>    需求：键盘录入星期数，显示今天的减肥活动。
+    周一：跑步
+    周二：游泳
+    .....
+</code></pre>
+</blockquote>
+<p>整数例程(注:字符串例程详见基础卷P96-5.9例程)</p>
+<pre><code class="java">import java.util.Scanner;
+
+public class Test9 &#123;
+    public static void main(String[] args) &#123;
+      
+
+        //分析：
+        //1.键盘录入星期数
+        Scanner sc = new Scanner(System.in);
+        System.out.println(&quot;请录入星期&quot;);
+        int week = sc.nextInt();
+        //2.利用switch对星期进行匹配
+        switch (week)&#123;
+            case 1:
+                System.out.println(&quot;跑步&quot;);
+                break;
+            case 2:
+                System.out.println(&quot;游泳&quot;);
+                break;
+         /*
+                .........(省略)
+                                         */
+            default:
+                System.out.println(&quot;没有这个星期&quot;);
+                break;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2023/07/05/hello-world/" title="Hello World"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">上一页: Hello World</span></a></section><article class="mt-6 comment-container"><script async repo="HonestLiu/honestliu.github.io" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/HonestLiu"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><a title="zhihu" target="_blank" rel="noopener nofollow" href="//zhihu.com//"><i class="iconfont icon-zhihu"></i></a><!-- 领英--><!-- 脸书--></section><p><span>Copyright ©</span><span> HonestLiu 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script></body></html>
